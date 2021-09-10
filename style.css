@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+h1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #273444;
+}
+
+/* ▼ WHERE YOUR CODE BEGINS */
+
+.user-card {
+  width: 240px;
+  padding: 8px 12px;
+  border: 1px solid #e5eaef;
+  border-radius: 4px;
+}
+
+.user-card::after {
+  content: "";
+  display: block;
+  clear: left;
+  /* float가 left이므로 */
+}
+/* floatf를 사용할 때 layout이 무너지지 않도록, clearfix처리를 해준다.  */
+
+.user-photo,
+.user-name {
+  float: left;
+}
+
+.user-photo {
+  position: relative;
+  /* user-status의 position인 absolute가 기준점을 user-photo로 잡을 수 있게 하기 위해  relative로 position을 변경 */
+  margin-right: 12px;
+}
+
+.user-photo img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.user-status {
+  position: absolute;
+  /* absolute를 하면 자동으로 block이 된다. absolute는 자신의 조상 요소들 중에서 position 값이 static이 아닌 것을 기준으로 잡는다.   */
+  /* display: block; */
+  right: -2px;
+  bottom: -2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background-color: #21d891;
+}
+
+.user-name {
+  padding: 8px 0;
+}
